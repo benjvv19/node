@@ -5,6 +5,10 @@ const port = 3001;
 
 const {robots} = require ("./robots");
 
+const { 
+    getRobots, 
+    getRobotsByid } = require("./controllerrs/getRobots");
+
 /*
 app.get("/",(req , res)=>{
 
@@ -16,6 +20,9 @@ app.get("/",(req , res)=>{
 
 })
 */
+app.get("/",getRobots);
+
+app.get("/:id",getRobotsByid);
 
 app.listen(port,()=>{
     console.log(`Conectado ok en el puerto: ${port}`);
